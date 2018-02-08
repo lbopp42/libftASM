@@ -3,16 +3,17 @@
 #include <string.h>
 #include <stdlib.h>
 
-int	main(int ac, char **av)
+void	ft_cat(int fd)
 {
-	char	buffer[100];
+	char	buffer[5000000];
 	int		i;
 
-	bzero(buffer, 100);
-	while (read(atoi(av[1]), buffer, 99) > 0)
+	printf("GOOD LAUNCH\n");
+	bzero(buffer, 5000000);
+	while (read(fd, buffer, 4999999) > 0)
 	{
 		i = 0;
-		puts(buffer);
-		bzero(buffer, 100);
+		printf("%s", buffer);
+		bzero(buffer, 4999999);
 	}
 }

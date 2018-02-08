@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <strings.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 int	ft_isalpha(char c);
 int	ft_isdigit(int c);
@@ -16,6 +17,7 @@ size_t	ft_strlen(const char *s);
 void	*ft_memset(void *src, int c, size_t len);
 void	*ft_memcpy(void	*dst, const void *src, size_t n);
 char	*ft_strdup(const char *s);
+void	ft_cat(int fd);
 
 int	ft_bzero_test()
 {
@@ -165,6 +167,17 @@ int	ft_strdup_test()
 	return (0);
 }
 
+void	ft_cattest()
+{
+	int	fd;
+
+	fd = open("ft_cat.s", O_RDONLY);
+	printf("Ft_cat sur ft_cat.s\n");
+	ft_cat(fd);
+	printf("ft_cat sur 0\n");
+	ft_cat(0);
+}
+
 int	main(void)
 {
 	int	i;
@@ -249,17 +262,6 @@ int	main(void)
 		printf("Erreur ft_strdup\n");
 	else
 		printf("Ft_strdup OK\n");
-
-	void	ft_cat(int fd);
-	/*char	*test;
-	int		k;
-
-	k = 0;*/
-	ft_cat(0);
-	/*while (test[k])
-	{
-		printf("[%c]\n", test[k]);
-		k++;
-	}*/
+	ft_cattest();
 	return (0);
 }
