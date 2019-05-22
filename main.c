@@ -18,6 +18,7 @@ void	*ft_memset(void *src, int c, size_t len);
 void	*ft_memcpy(void	*dst, const void *src, size_t n);
 char	*ft_strdup(const char *s);
 void	ft_cat(int fd);
+int		ft_puts(const char *s);
 
 int	ft_bzero_test()
 {
@@ -171,12 +172,14 @@ void	ft_cattest()
 {
 	int	fd;
 
-	fd = open("ft_cat.s", O_RDONLY);
+	fd = open("srcs/ft_cat.s", O_RDONLY);
 	printf("Ft_cat sur ft_cat.s\n");
 	ft_cat(fd);
 	close(fd);
 	printf("ft_cat sur 0\n");
 	ft_cat(0);
+	printf("Test fail fd\n");
+	ft_cat(-1);
 }
 
 int		ft_isalpha_test(void)
@@ -284,6 +287,12 @@ int		ft_istolower_test(void)
 	return (1);
 }
 
+int		ft_puts_test(void)
+{
+	ft_puts("a");
+	return (1);
+}
+
 int	main(void)
 {
 	//ft_istolower_test();
@@ -317,6 +326,7 @@ int	main(void)
 	//	printf("Erreur ft_strdup\n");
 	//else
 	//	printf("Ft_strdup OK\n");
-	ft_cattest();
+	//ft_cattest();
+	ft_puts_test();
 	return (0);
 }

@@ -1,8 +1,5 @@
 %define MACH_SYSCALL(nb)	0x2000000 | nb
 
-section .data
-	buffer: times 5000000 db 0
-
 section .text
 	global _ft_cat
 	extern _ft_strlen
@@ -14,14 +11,15 @@ _ft_cat:
 	push	rdi
 .while:
 	mov		rdi, buffer
-	mov		rsi, 5000000
+	mov		rsi, 1025
 	call	_ft_bzero
 	pop		rdi
 	push	rdi
 	mov		rsi, buffer
-	mov		rdx, 4999999
+	mov		rdx, 1024
 	mov		rax, MACH_SYSCALL(3)
 	syscall
+	jc		_ft_cat.error
 	push	rax
 	mov		rdi, buffer
 	call	_ft_strlen
@@ -30,6 +28,7 @@ _ft_cat:
 	mov		rdx, rax
 	mov		rax, MACH_SYSCALL(4)
 	syscall
+	jc		_ft_cat.error
 	pop		rax
 	cmp		rax, 0
 	jg		_ft_cat.while
@@ -37,3 +36,18 @@ _ft_cat:
 	mov		rsp, rbp	; { Can be replace by leave
 	pop		rbp			; {
 	ret
+.error:
+	mov		rdi, 1
+	mov		rsi, msg
+	mov		rdx, 5
+	mov		rax, MACH_SYSCALL(4)
+	syscall
+	mov		rsp, rbp	; { Can be replace by leave
+	pop		rbp			; {
+	ret
+
+section .data
+	msg: db "Error"
+
+section .bss
+	buffer: resb 1024
