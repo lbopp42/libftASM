@@ -174,11 +174,12 @@ void	ft_cattest()
 	fd = open("ft_cat.s", O_RDONLY);
 	printf("Ft_cat sur ft_cat.s\n");
 	ft_cat(fd);
+	close(fd);
 	printf("ft_cat sur 0\n");
 	ft_cat(0);
 }
 
-int	main(void)
+int		ft_isalpha_test(void)
 {
 	int	i;
 
@@ -186,82 +187,136 @@ int	main(void)
 		if (ft_isalpha(i) != isalpha(i))
 		{
 			printf("Erreur ft_isalpha i = %d\n", i);
-			break ;
+			return (0);
 		}
 	if (i == 256)
 		printf("Ft_isalpha OK\n");
+	return (1);
+}
+
+int		ft_isdigit_test(void)
+{
+	int	i;
+
 	for (i = 0; i <= 255; i++)
 		if (ft_isdigit(i) != isdigit(i))
 		{
 			printf("Erreur ft_isdigit i = %d\n", i);
-			break ;
+			return (0);
 		}
 	if (i == 256)
 		printf("Ft_isdigit OK\n");
+	return (1);
+}
+
+int		ft_isalnum_test(void)
+{
+	int	i;
+
 	for (i = 0; i <= 255; i++)
 		if (ft_isalnum(i) != isalnum(i))
 		{
 			printf("Erreur ft_isalnum i = %d\n", i);
-			break ;
+			return (0);
 		}
 	if (i == 256)
 		printf("Ft_isalnum OK\n");
+	return (1);
+}
+
+int		ft_isascii_test(void)
+{
+	int	i;
+
 	for (i = 0; i <= 255; i++)
 		if (ft_isascii(i) != isascii(i))
 		{
 			printf("Erreur ft_isascii i = %d\n", i);
-			break ;
+			return(0);
 		}
 	if (i == 256)
 		printf("Ft_isascii OK\n");
+	return(1);
+}
+
+int		ft_isprint_test(void)
+{
+	int	i;
+
 	for (i = 0; i <= 255; i++)
 		if (ft_isprint(i) != isprint(i))
 		{
 			printf("Erreur ft_isprint i = %d\n", i);
-			break ;
+			return(0);
 		}
 	if (i == 256)
 		printf("Ft_isprint OK\n");
+	return (1);
+}
+
+int		ft_istoupper_test(void)
+{
+	int	i;
+
 	for (i = 0; i <= 255; i++)
 		if (ft_toupper(i) != toupper(i))
 		{
 			printf("Erreur ft_toupper i = %d\n", i);
-			break ;
+			return (0);
 		}
 	if (i == 256)
 		printf("Ft_toupper OK\n");
+	return (1);
+}
+
+int		ft_istolower_test(void)
+{
+	int	i;
+
 	for (i = 0; i <= 255; i++)
 		if (ft_tolower(i) != tolower(i))
 		{
 			printf("Erreur ft_tolower i = %d\n", i);
-			break ;
+			return (0);
 		}
 	if (i == 256)
 		printf("Ft_tolower OK\n");
-	if (ft_bzero_test())
-		printf("Erreur ft_bzero\n");
-	else
-		printf("Ft_bzero OK\n");
-	if (ft_strcat_test())
-		printf("Erreur ft_strcat\n");
-	else
-		printf("Ft_strcat OK\n");
-	if (ft_strlen_test())
-		printf("Erreur ft_strlen\n");
-	else
-		printf("Ft_strlen OK\n");
-	if (ft_memset_test())
-		printf("Erreur ft_memset\n");
-	else
-		printf("Ft_memset OK\n");
-	if (ft_memcpy_test())
-		printf("Erreur ft_memcpy\n");
-	else
-		printf("Ft_memcpy OK\n");
-	if (ft_strdup_test())
-		printf("Erreur ft_strdup\n");
-	else
-		printf("Ft_strdup OK\n");
+	return (1);
+}
+
+int	main(void)
+{
+	//ft_istolower_test();
+	//ft_istoupper_test();
+	//ft_isprint_test();
+	//ft_isascii_test();
+	//ft_isdigit_test();
+	//ft_isalpha_test();
+	//ft_isalnum_test();
+	//if (ft_bzero_test())
+	//	printf("Erreur ft_bzero\n");
+	//else
+	//	printf("Ft_bzero OK\n");
+	//if (ft_strcat_test())
+	//	printf("Erreur ft_strcat\n");
+	//else
+	//	printf("Ft_strcat OK\n");
+	//if (ft_strlen_test())
+	//	printf("Erreur ft_strlen\n");
+	//else
+	//	printf("Ft_strlen OK\n");
+	//if (ft_memset_test())
+	//	printf("Erreur ft_memset\n");
+	//else
+	//	printf("Ft_memset OK\n");
+	//if (ft_memcpy_test())
+	//	printf("Erreur ft_memcpy\n");
+	//else
+	//	printf("Ft_memcpy OK\n");
+	//if (ft_strdup_test())
+	//	printf("Erreur ft_strdup\n");
+	//else
+	//	printf("Ft_strdup OK\n");
 	ft_cattest();
 	return (0);
 }
