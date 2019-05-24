@@ -6,8 +6,9 @@ _ft_memset:
 	mov			rbp, rsp	; {
 	mov			rax, rsi
 	mov			rcx, rdx
+	push		rdi
 	rep			stosb
-	mov			rax, rdi
+	pop			rax
 	mov			rsp, rbp	;{ Can be replace by leave
 	pop			rbp			;{
 	ret

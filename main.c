@@ -289,7 +289,12 @@ int		ft_istolower_test(void)
 
 int		ft_puts_test(void)
 {
+	ft_puts("");
+	puts("");
 	ft_puts("a");
+	puts("a");
+	ft_puts(NULL);
+	puts(NULL);
 	return (1);
 }
 
@@ -318,15 +323,15 @@ int	main(void)
 	//	printf("Erreur ft_memset\n");
 	//else
 	//	printf("Ft_memset OK\n");
-	//if (ft_memcpy_test())
-	//	printf("Erreur ft_memcpy\n");
-	//else
-	//	printf("Ft_memcpy OK\n");
+	if (ft_memcpy_test())
+		printf("Erreur ft_memcpy\n");
+	else
+		printf("Ft_memcpy OK\n");
 	//if (ft_strdup_test())
 	//	printf("Erreur ft_strdup\n");
 	//else
 	//	printf("Ft_strdup OK\n");
 	//ft_cattest();
-	ft_puts_test();
+	//ft_puts_test();
 	return (0);
 }
