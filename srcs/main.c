@@ -19,6 +19,7 @@ void	*ft_memcpy(void	*dst, const void *src, size_t n);
 char	*ft_strdup(const char *s);
 void	ft_cat(int fd);
 int		ft_puts(const char *s);
+void	ft_swap(int	*a, int *b);
 
 int	ft_bzero_test()
 {
@@ -298,40 +299,59 @@ int		ft_puts_test(void)
 	return (1);
 }
 
+void	ft_swap_test()
+{
+	int a;
+	int b;
+
+	a = 10;
+	b = 5;
+	printf("a = [%d], b = [%d]\n", a, b);
+	ft_swap(&a, &b);
+	if (a == 5 && b == 10)
+		printf("ft_swap OK\n");
+	else
+		printf("ft_swap ERROR\n");
+	printf("a = [%d], b = [%d]\n", a, b);
+}
+
 int	main(void)
 {
-	ft_istolower_test();
-	ft_istoupper_test();
-	ft_isprint_test();
-	ft_isascii_test();
-	ft_isdigit_test();
-	ft_isalpha_test();
-	ft_isalnum_test();
-	if (ft_bzero_test())
-		printf("Erreur ft_bzero\n");
-	else
-		printf("Ft_bzero OK\n");
-	if (ft_strcat_test())
-		printf("Erreur ft_strcat\n");
-	else
-		printf("Ft_strcat OK\n");
-	if (ft_strlen_test())
-		printf("Erreur ft_strlen\n");
-	else
-		printf("Ft_strlen OK\n");
-	if (ft_memset_test())
-		printf("Erreur ft_memset\n");
-	else
-		printf("Ft_memset OK\n");
-	if (ft_memcpy_test())
-		printf("Erreur ft_memcpy\n");
-	else
-		printf("Ft_memcpy OK\n");
-	if (ft_strdup_test())
-		printf("Erreur ft_strdup\n");
-	else
-		printf("Ft_strdup OK\n");
-	ft_cattest();
-	ft_puts_test();
+	//ft_istolower_test();
+	//ft_istoupper_test();
+	//ft_isprint_test();
+	//ft_isascii_test();
+	//ft_isdigit_test();
+	//ft_isalpha_test();
+	//ft_isalnum_test();
+	//if (ft_bzero_test())
+	//	printf("Erreur ft_bzero\n");
+	//else
+	//	printf("Ft_bzero OK\n");
+	//if (ft_strcat_test())
+	//	printf("Erreur ft_strcat\n");
+	//else
+	//	printf("Ft_strcat OK\n");
+	//if (ft_strlen_test())
+	//	printf("Erreur ft_strlen\n");
+	//else
+	//	printf("Ft_strlen OK\n");
+	//if (ft_memset_test())
+	//	printf("Erreur ft_memset\n");
+	//else
+	//	printf("Ft_memset OK\n");
+	//if (ft_memcpy_test())
+	//	printf("Erreur ft_memcpy\n");
+	//else
+	//	printf("Ft_memcpy OK\n");
+	//if (ft_strdup_test())
+	//	printf("Erreur ft_strdup\n");
+	//else
+	//	printf("Ft_strdup OK\n");
+	//ft_cattest();
+	//ft_puts_test();
+	printf("AVANT\n");
+	ft_swap_test();
+	printf("APREs\n");
 	return (0);
 }
