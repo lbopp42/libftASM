@@ -6,7 +6,7 @@
 #    By: lbopp <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/22 09:45:26 by lbopp             #+#    #+#              #
-#    Updated: 2019/05/24 11:47:32 by lbopp            ###   ########.fr        #
+#    Updated: 2019/05/28 11:20:06 by lbopp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC_NAME = ft_bzero.s\
 		   ft_memset.s\
 		   ft_memcpy.s\
 		   ft_strdup.s\
+		   ft_strcmp.s\
 		   ft_swap.s\
 		   ft_cat.s
 SRC_PATH = srcs

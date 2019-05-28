@@ -20,6 +20,7 @@ char	*ft_strdup(const char *s);
 void	ft_cat(int fd);
 int		ft_puts(const char *s);
 void	ft_swap(int	*a, int *b);
+int		ft_strcmp(const char *s1, const char *s2);
 
 int	ft_bzero_test()
 {
@@ -306,13 +307,27 @@ void	ft_swap_test()
 
 	a = 10;
 	b = 5;
-	printf("a = [%d], b = [%d]\n", a, b);
 	ft_swap(&a, &b);
 	if (a == 5 && b == 10)
 		printf("ft_swap OK\n");
 	else
 		printf("ft_swap ERROR\n");
-	printf("a = [%d], b = [%d]\n", a, b);
+}
+
+void	ft_strcmp_test()
+{
+	if (ft_strcmp("test1", "test5") != strcmp("test1", "test5"))
+		printf("ft_strcmp_test 1 ERROR [%d], [%d]\n", ft_strcmp("test1", "test5"), strcmp("test1", "test5"));
+	else if (ft_strcmp("test", "test5") != strcmp("test", "test5"))
+		printf("ft_strcmp_test 2 ERROR [%d], [%d]\n", ft_strcmp("test", "test5"), strcmp("test", "test5"));
+	else if (ft_strcmp("te", "test5") != strcmp("te", "test5"))
+		printf("ft_strcmp_test 3 ERROR [%d], [%d]\n", ft_strcmp("te", "test5"), strcmp("te", "test5"));
+	else if (ft_strcmp("", "test5") != strcmp("", "test5"))
+		printf("ft_strcmp_test 4 ERROR [%d], [%d]\n", ft_strcmp("", "test5"), strcmp("", "test5"));
+	else if (ft_strcmp("", "") != strcmp("", ""))
+		printf("ft_strcmp_test 5 ERROR [%d], [%d]\n", ft_strcmp("", ""), strcmp("", ""));
+	else
+		printf("ft_strcmp_test OK\n");
 }
 
 int	main(void)
@@ -350,8 +365,7 @@ int	main(void)
 	//	printf("Ft_strdup OK\n");
 	//ft_cattest();
 	//ft_puts_test();
-	printf("AVANT\n");
-	ft_swap_test();
-	printf("APREs\n");
+	//ft_swap_test();
+	ft_strcmp_test();
 	return (0);
 }
