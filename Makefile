@@ -6,7 +6,7 @@
 #    By: lbopp <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/22 09:45:26 by lbopp             #+#    #+#              #
-#    Updated: 2019/05/28 17:16:29 by downer           ###   ########.fr        #
+#    Updated: 2019/05/29 10:12:03 by lbopp            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRC_NAME = ft_bzero.s\
 		   ft_strncmp.s\
 		   ft_swap.s\
 		   ft_putchar.s\
+		   ft_putstr.s\
 		   ft_cat.s
 SRC_PATH = srcs
 SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))

@@ -4,6 +4,7 @@ section .text
 _ft_strlen:
 	push	rbp			; {	Can be replace by enter 0, 0
 	mov		rbp, rsp	; {
+	cmp		rdi, 0
 	cld
 	mov		rcx, -1
 	xor		al, al

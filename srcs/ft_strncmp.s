@@ -2,10 +2,10 @@ section .text
 	global	_ft_strncmp
 
 _ft_strncmp:
-	mov		rcx, [rdx]
+	mov		rcx, rdx
 .while:
 	cmp		rcx, 0
-	je		_ft_strncmp.result
+	je		_ft_strncmp.end
 	xor		rbx, rbx
 	mov		bl, [rsi]
 	cmp		[rdi], bl
@@ -24,4 +24,7 @@ _ft_strncmp:
 	mov		al, byte [rdi]
 	mov		cl, byte [rsi]
 	sub		rax, rcx
+	ret
+.end:
+	xor		rax, rax
 	ret
