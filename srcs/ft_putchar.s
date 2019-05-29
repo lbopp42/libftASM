@@ -1,4 +1,6 @@
-section .text:
+%define MACH_SYSCALL(nb)	0x2000000 | nb
+
+section .text
 	global _ft_putchar
 	global ft_putchar
 

@@ -350,7 +350,7 @@ void	ft_putchar(char c);
 
 void	ft_putchar_test()
 {
-	ft_putchar('a')
+	ft_putchar('a');
 }
 
 int	main(void)
