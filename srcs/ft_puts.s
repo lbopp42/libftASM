@@ -29,7 +29,7 @@ _ft_puts:
 .null:
 	mov rdi, 1
 	mov rdx, 7
-	mov rsi, null
+	lea rsi, [rel null]
 	mov rax, MACH_SYSCALL(4)
 	syscall
 	mov rax, 0

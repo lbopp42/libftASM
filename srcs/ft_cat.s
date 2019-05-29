@@ -10,20 +10,20 @@ _ft_cat:
 	mov		rbp, rsp	; {
 	push	rdi
 .while:
-	mov		rdi, buffer
+	lea		rdi, [rel buffer]
 	mov		rsi, 1025
 	call	_ft_bzero
 	pop		rdi
 	push	rdi
-	mov		rsi, buffer
+	lea		rsi, [rel buffer]
 	mov		rdx, 1024
 	mov		rax, MACH_SYSCALL(3)
 	syscall
 	jc		_ft_cat.error
 	push	rax
-	mov		rdi, buffer
+	lea		rdi, [rel buffer]
 	mov		rdi, 1
-	mov		rsi, buffer
+	lea		rsi, [rel buffer]
 	mov		rdx, 1025
 	mov		rax, MACH_SYSCALL(4)
 	syscall
@@ -37,7 +37,7 @@ _ft_cat:
 	ret
 .error:
 	mov		rdi, 1
-	mov		rsi, msg
+	lea		rsi, [rel msg]
 	mov		rdx, 5
 	mov		rax, MACH_SYSCALL(4)
 	syscall
