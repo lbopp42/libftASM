@@ -22,10 +22,9 @@ _ft_cat:
 	jc		_ft_cat.error
 	push	rax
 	mov		rdi, buffer
-	call	_ft_strlen
 	mov		rdi, 1
 	mov		rsi, buffer
-	mov		rdx, rax
+	mov		rdx, 1025
 	mov		rax, MACH_SYSCALL(4)
 	syscall
 	jc		_ft_cat.error
